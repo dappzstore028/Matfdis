@@ -1,0 +1,436 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Permutasi</title>
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjs/9.4.4/math.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="stylepermutasi.css">
+</head>
+
+<body>
+  <div id="particles-js"></div>
+  
+  <nav class="top-nav">
+    <div class="nav-container">
+      <div class="logo"><i class="fas fa-random"></i> Permutasi</div>
+      <ul class="nav-links">
+        <li><a href="#" onclick="showMain()">Teori</a></li>
+        <li><a href="#" onclick="showKasus()">Kasus</a></li>
+        <li><a href="#" onclick="showCalculator()">Kalkulator</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <div class="main-container">
+    <div id="main-content" class="content active">
+      <div class="content-card">
+        <h1 class="main-title">PERMUTASI</h1>
+        <div class="theory-section">
+          <p>Permutasi adalah himpunan yang dibentuk dari kumpulan objek (unsur) yang diambil sebagian atau seluruhnya dengan <b>memperhatikan urutannya</b>. Permutasi memiliki beberapa jenis berdasarkan unsur-unsur yang disusun: permutasi dengan <b>unsur berbeda</b>, permutasi dengan <b>unsur sama</b>, dan permutasi <b>siklis (melingkar)</b>.</p>
+          
+          <div class="formula-banner">
+            <div class="formula-icon"><i class="fas fa-calculator"></i></div>
+            <div class="formula-summary">
+              <p>Ada tiga jenis permutasi yang masing-masing memiliki rumus perhitungan berbeda</p>
+            </div>
+          </div>
+          
+          <div class="permutation-types">
+            <div class="permutation-type">
+              <h3 class="type-title">Permutasi dengan Unsur Berbeda</h3>
+              <div class="formula-card">
+                <div class="formula-container">
+                  <div class="formula">
+                    <span class="permutation-symbol">P</span>(<span class="variable">n</span>,<span class="variable">r</span>) = 
+                    <div class="fraction">
+                      <span class="numerator"><span class="variable">n</span>!</span>
+                      <span class="denominator">(<span class="variable">n</span>-<span class="variable">r</span>)!</span>
+                    </div>
+                    &nbsp;atau&nbsp;
+                    <span class="permutation-symbol"><sup class="variable">n</sup>P<sub class="variable">r</sub></span> = 
+                    <div class="fraction">
+                      <span class="numerator"><span class="variable">n</span>!</span>
+                      <span class="denominator">(<span class="variable">n</span>-<span class="variable">r</span>)!</span>
+                    </div>
+                  </div>
+                </div>
+                
+                <div class="formula-explanation">
+                  <h4>Keterangan:</h4>
+                  <ul>
+                    <li><span class="variable">n</span> = banyaknya unsur yang tersedia</li>
+                    <li><span class="variable">r</span> = banyaknya unsur yang akan disusun</li>
+                  </ul>
+                </div>
+              </div>
+              
+              <div class="example-section">
+                <h4>Contoh Soal 1:</h4>
+                <div class="example-problem">
+                  <p>Sebuah organisasi yang beranggotakan 8 orang ingin membuat susunan pengurus harian yang terdiri dari 4 posisi, yaitu ketua, wakil, sekretaris, dan bendahara. Berapakah kemungkinan peluang susunan panitia yang bisa dibuat?</p>
+                </div>
+                
+                <div class="example-solution">
+                  <h4>Pembahasan:</h4>
+                  <div class="solution-steps">
+                    <p>Diketahui = n = 8<br>r = 4</p>
+                    <p>Ditanya = <span class="permutation-symbol">P</span> = ?</p>
+                    <div class="step">
+                      <p><span class="permutation-symbol"><sup>8</sup>P<sub>4</sub></span> = 8!/(8-4)!</p>
+                    </div>
+                    <div class="step">
+                      <p><span class="permutation-symbol"><sup>8</sup>P<sub>4</sub></span> = 8!/(4!)</p>
+                    </div>
+                    <div class="step">
+                      <p><span class="permutation-symbol"><sup>8</sup>P<sub>4</sub></span> = (8×7×6×5×4!)/(4!)</p>
+                    </div>
+                    <div class="step">
+                      <p><span class="permutation-symbol"><sup>8</sup>P<sub>4</sub></span> = 8×7×6×5</p>
+                    </div>
+                    <div class="step result">
+                      <p><span class="permutation-symbol"><sup>8</sup>P<sub>4</sub></span> = 1680</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              
+              <div class="example-section">
+                <h4>Contoh Soal 2:</h4>
+                <div class="example-problem">
+                  <p>Jika diketahui angka-angka: 1, 2, 3, 4, 5, dan 6 akan disusun bilangan 4 angka berbeda, maka banyaknya cara untuk mengisi masing-masing tempat adalah?</p>
+                </div>
+                
+                <div class="example-solution">
+                  <h4>Pembahasan:</h4>
+                  <div class="solution-steps">
+                    <p>Diketahui bahwa akan diambil 4 angka dari 6 angka untuk disusun menjadi bilangan yang berbeda.<br>Hal ini berarti r = 4 dan n = 6.</p>
+                    <p>Ditanya = <span class="permutation-symbol">P</span> = ?</p>
+                    <div class="step">
+                      <p><span class="permutation-symbol"><sup>6</sup>P<sub>4</sub></span> = 6!/(6-4)!</p>
+                    </div>
+                    <div class="step">
+                      <p><span class="permutation-symbol"><sup>6</sup>P<sub>4</sub></span> = 6!/2!</p>
+                    </div>
+                    <div class="step">
+                      <p><span class="permutation-symbol"><sup>6</sup>P<sub>4</sub></span> = (6×5×4×3×2!)/(2!)</p>
+                    </div>
+                    <div class="step">
+                      <p><span class="permutation-symbol"><sup>6</sup>P<sub>4</sub></span> = 6×5×4×3</p>
+                    </div>
+                    <div class="step result">
+                      <p><span class="permutation-symbol"><sup>6</sup>P<sub>4</sub></span> = 360</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            
+            <div class="permutation-type">
+              <h3 class="type-title">Permutasi dengan Unsur Sama</h3>
+              <div class="formula-card">
+                <div class="formula-container">
+                  <div class="formula">
+                    <span class="permutation-symbol">P</span>(<span class="variable">n</span>, <span class="variable">k<sub>1</sub></span>, <span class="variable">k<sub>2</sub></span>...) = 
+                    <div class="fraction">
+                      <span class="numerator"><span class="variable">n</span>!</span>
+                      <span class="denominator"><span class="variable">k<sub>1</sub></span>!×<span class="variable">k<sub>2</sub></span>!×...</span>
+                    </div>
+                  </div>
+                </div>
+                
+                <div class="formula-explanation">
+                  <h4>Keterangan:</h4>
+                  <ul>
+                    <li><span class="variable">n</span> = banyaknya unsur yang tersedia</li>
+                    <li><span class="variable">k</span> = jumlah unsur yang sama</li>
+                  </ul>
+                </div>
+              </div>
+              
+              <div class="example-section">
+                <h4>Contoh Soal 1:</h4>
+                <div class="example-problem">
+                  <p>Banyak susunan kata yang dapat dibentuk dari kata DINAYA adalah?</p>
+                  <div class="multiple-choice">
+                    <p>A. 420</p>
+                    <p>B. 360</p>
+                    <p>C. 180</p>
+                    <p>D. 90</p>
+                    <p>E. 60</p>
+                  </div>
+                </div>
+                
+                <div class="example-solution">
+                  <h4>Pembahasan:</h4>
+                  <div class="solution-steps">
+                    <p>Kata DINAYA terdiri dari 6 huruf dengan 2 huruf yang sama yaitu huruf A</p>
+                    <div class="step">
+                      <p><span class="permutation-symbol">P</span> = n! / (k<sub>1</sub>! × k<sub>2</sub>! × ... × k<sub>i</sub>!)</p>
+                    </div>
+                    <div class="step">
+                      <p><span class="permutation-symbol">P</span> = 6!/2!</p>
+                    </div>
+                    <div class="step">
+                      <p><span class="permutation-symbol">P</span> = (6×5×4×3×2!)/2!</p>
+                    </div>
+                    <div class="step">
+                      <p><span class="permutation-symbol">P</span> = 6×5×4×3</p>
+                    </div>
+                    <div class="step result">
+                      <p><span class="permutation-symbol">P</span> = 360</p>
+                    </div>
+                    <div class="final-result">
+                      <p class="answer">Jawaban: <span>B</span></p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              
+              <div class="example-section">
+                <h4>Contoh Soal 2:</h4>
+                <div class="example-problem">
+                  <p>Ada 5 bola yang terdiri dari 3 bola merah, 2 bola biru. Berapa banyak cara menyusun bola tersebut dalam satu baris?</p>
+                </div>
+                
+                <div class="example-solution">
+                  <h4>Pembahasan:</h4>
+                  <div class="solution-steps">
+                    <p>Diketahui = Total bola: 5<br>
+                    Bola yang sama:<br>
+                    Merah = 3<br>
+                    Biru = 2</p>
+                    <div class="step">
+                      <p><span class="permutation-symbol">P</span> = 5! / (3! × 2!)</p>
+                    </div>
+                    <div class="step">
+                      <p><span class="permutation-symbol">P</span> = (5×4×3!)/3!×2!</p>
+                    </div>
+                    <div class="step">
+                      <p><span class="permutation-symbol">P</span> = (5×4)/2</p>
+                    </div>
+                    <div class="step">
+                      <p><span class="permutation-symbol">P</span> = 20/2</p>
+                    </div>
+                    <div class="step result">
+                      <p><span class="permutation-symbol">P</span> = 10</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            
+            <div class="permutation-type">
+              <h3 class="type-title">Permutasi Siklis (Melingkar)</h3>
+              <div class="formula-card">
+                <div class="formula-container">
+                  <div class="formula">
+                    <span class="permutation-symbol">P<sub>siklis</sub></span> = (<span class="variable">n</span> - 1)!
+                  </div>
+                </div>
+                
+                <div class="formula-explanation">
+                  <h4>Keterangan:</h4>
+                  <ul>
+                    <li><span class="variable">n</span> = banyaknya unsur yang tersedia</li>
+                  </ul>
+                </div>
+              </div>
+              
+              <div class="circular-illustration">
+                <div class="circle">
+                  <div class="dot" style="transform: rotate(0deg) translateY(-40px)">A</div>
+                  <div class="dot" style="transform: rotate(90deg) translateY(-40px)">B</div>
+                  <div class="dot" style="transform: rotate(180deg) translateY(-40px)">C</div>
+                  <div class="dot" style="transform: rotate(270deg) translateY(-40px)">D</div>
+                </div>
+              </div>
+              
+              <div class="example-section">
+                <h4>Contoh Soal 1:</h4>
+                <div class="example-problem">
+                  <p>Jika ada 4 orang yang akan duduk mengelilingi meja bundar, maka jumlah cara mereka duduk yang berbeda adalah?</p>
+                </div>
+                
+                <div class="example-solution">
+                  <h4>Pembahasan:</h4>
+                  <div class="solution-steps">
+                    <p>Diketahui = n = 4</p>
+                    <div class="step">
+                      <p><span class="permutation-symbol">P<sub>siklis</sub></span> = (4-1)!</p>
+                    </div>
+                    <div class="step">
+                      <p><span class="permutation-symbol">P<sub>siklis</sub></span> = 3!</p>
+                    </div>
+                    <div class="step">
+                      <p><span class="permutation-symbol">P<sub>siklis</sub></span> = 3×2×1</p>
+                    </div>
+                    <div class="step result">
+                      <p><span class="permutation-symbol">P<sub>siklis</sub></span> = 6</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              
+              <div class="example-section">
+                <h4>Contoh Soal 2:</h4>
+                <div class="example-problem">
+                  <p>Di sebuah ruangan, 8 lampu sorot akan ditempatkan di sudut-sudut lingkaran untuk acara pertunjukan. Berapa banyak cara berbeda memasang keempat lampu tersebut?</p>
+                </div>
+                
+                <div class="example-solution">
+                  <h4>Pembahasan:</h4>
+                  <div class="solution-steps">
+                    <p>Diketahui = n = 8</p>
+                    <div class="step">
+                      <p><span class="permutation-symbol">P<sub>siklis</sub></span> = (8-1)!</p>
+                    </div>
+                    <div class="step">
+                      <p><span class="permutation-symbol">P<sub>siklis</sub></span> = 7!</p>
+                    </div>
+                    <div class="step">
+                      <p><span class="permutation-symbol">P<sub>siklis</sub></span> = 7×6×5×4×3×2×1</p>
+                    </div>
+                    <div class="step result">
+                      <p><span class="permutation-symbol">P<sub>siklis</sub></span> = 5040</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <div class="navigation-buttons">
+          <button onclick="showKasus()" class="navigate-button">Kasus <i class="fas fa-arrow-right"></i></button>
+        </div>
+      </div>
+    </div>
+  
+    <div id="kasus-content" class="content">
+      <div class="content-card">
+        <h1 class="main-title">KASUS PERMUTASI</h1>
+        <div class="case-section">
+          <div class="case-visualization">
+            <div class="number-queue">
+              <div class="number-card" id="digit1">0</div>
+              <div class="number-card" id="digit2">0</div>
+              <div class="number-card" id="digit3">0</div>
+            </div>
+          </div>
+
+          <div class="case-problem">
+            <p>Seorang karyawan di supermarket terkenal ingin membuat pembeli lebih tertib dan tidak menyerobot antrian di kasir. Ia akan menyusun nomor antre yang terdiri dari tiga angka.</p>
+            <p>Apabila nomor antrian tersebut tidak memiliki angka yang sama yang dibentuk dari angka 0, 1, 2, 3, maka ada berapa banyak cara pilihan nomor antrian yang dapat dibuat karyawan tersebut?</p>
+            
+            <div class="multiple-choice">
+              <p>A. 4</p>
+              <p>B. 12</p>
+              <p>C. 24</p>
+              <p>D. 36</p>
+              <p>E. 72</p>
+            </div>
+          </div>
+        </div>
+        
+        <div class="navigation-buttons">
+          <button onclick="showMain()" class="navigate-button"><i class="fas fa-arrow-left"></i> Teori</button>
+          <button onclick="showKasusPembahasan()" class="navigate-button">Pembahasan <i class="fas fa-arrow-right"></i></button>
+        </div>
+      </div>
+    </div>
+  
+    <div id="kasus-pembahasan-content" class="content">
+      <div class="content-card">
+        <h1 class="main-title">PEMBAHASAN</h1>
+        <div class="solution-section">
+          <p>Banyak angka yang tersedia = 4 yang terdiri dari 0, 1, 2, 3</p>
+          <p>Karyawan akan memilih 3 nomor antrian berbeda, maka banyak pilihannya adalah permutasi 3 dari 4</p>
+                  
+          <div class="solution-steps-container">
+            <div class="solution-step">
+              <div class="step">
+                <p><span class="permutation-symbol">P</span>(n,r) = n!/(n-r)!</p>
+              </div>
+              <div class="step">
+                <p><span class="permutation-symbol">P</span>(4,3) = 4!/(4-3)!</p>
+              </div>
+              <div class="step">
+                <p><span class="permutation-symbol">P</span> = 4!/1!</p>
+              </div>
+              <div class="step">
+                <p><span class="permutation-symbol">P</span> = 4×3×2×1</p>
+              </div>
+              <div class="step result">
+                <p><span class="permutation-symbol">P</span> = 24</p>
+              </div>
+            </div>
+          </div>
+          
+          <div class="final-result">
+            <p>Jadi, banyaknya cara pilihan nomor antrian yang dapat dibuat adalah 24 cara.</p>
+            <p class="answer">Jawaban: <span>C</span></p>
+          </div>
+        </div>
+        
+        <div class="navigation-buttons">
+          <button onclick="showKasus()" class="navigate-button"><i class="fas fa-arrow-left"></i> Kasus</button>
+          <button onclick="showCalculator()" class="navigate-button">Kalkulator <i class="fas fa-arrow-right"></i></button>
+        </div>
+      </div>
+    </div>
+  
+    <div id="calculator-content" class="content">
+      <div class="content-card">
+        <h1 class="main-title">KALKULATOR PERMUTASI</h1>
+        
+        <div class="calculator-container">
+          <div class="calculator-form">
+            <div class="input-group">
+              <label for="numbers">Masukkan angka yang tersedia:</label>
+              <input type="text" id="numbers" placeholder="Contoh: 1,2,3 atau 0-9" />
+            </div>
+            
+            <div class="input-group">
+              <label for="panjangAntrian">Masukkan panjang antrian:</label>
+              <input type="number" id="panjangAntrian" min="1" placeholder="Panjang antrian" />
+            </div>
+            
+            <div class="checkbox-group">
+              <input type="checkbox" id="allowRepeats" />
+              <label for="allowRepeats">Izinkan angka berulang</label>
+            </div>
+            
+            <button id="calculate" class="calculate-button" onclick="calculatePermutationsFromInput()">
+              <i class="fas fa-calculator"></i> Hitung
+            </button>
+          </div>
+          
+          <div class="calculator-result">
+            <div class="result-container">
+              <h3>Hasil Perhitungan</h3>
+              <div id="result" class="result-display">
+                <p>Hasil akan ditampilkan di sini</p>
+              </div>
+            </div>
+            
+            <div class="visualization">
+              <div id="permutation-visualization" class="permutation-visualization">
+                <!-- Permutation visualization will be added here -->
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <div class="navigation-buttons">
+          <button onclick="showKasusPembahasan()" class="navigate-button"><i class="fas fa-arrow-left"></i> Pembahasan</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="permutasi.js"></script>
+</body>
+</html>

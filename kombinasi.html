@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kombinasi</title>
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjs/9.4.4/math.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="stylekombinasi.css">
+</head>
+
+<body>
+  <div id="particles-js"></div>
+  
+  <nav class="top-nav">
+    <div class="nav-container">
+      <div class="logo"><i class="fas fa-calculator"></i> Kelompok 4</div>
+      <ul class="nav-links">
+        <li><a href="#" onclick="showMain()">Teori</a></li>
+        <li><a href="#" onclick="showKasus()">Kasus</a></li>
+        <li><a href="#" onclick="showCalculator()">Kalkulator</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <div class="main-container">
+    <div id="main-content" class="content active">
+      <div class="content-card">
+        <h1 class="main-title">KOMBINASI</h1>
+        <div class="theory-section">
+          <p>Kombinasi merupakan cara memilih beberapa objek dari sekumpulan objek tanpa memperhatikan urutan. Dalam kombinasi, urutan pemilihan <b>tidak penting</b>, berbeda dengan permutasi yang memperhitungkan urutan.</p>
+          
+          <p>Kombinasi sering digunakan dalam konteks perhitungan peluang, seperti menghitung berapa banyak cara memilih tim dari sekelompok orang, atau memilih item tertentu dari kumpulan barang. Berikut adalah perbedaan antara permutasi dan kombinasi:</p>
+          
+          <div class="table-container">
+            <table class="comparison-table">
+              <thead>
+                <tr>
+                  <th>Aspek</th>
+                  <th>Permutasi</th>
+                  <th>Kombinasi</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Konsep Dasar</td>
+                  <td>Urutan penting</td>
+                  <td>Urutan tidak penting</td>
+                </tr>
+                <tr>
+                  <td>Rumus</td>
+                  <td>P(n,r) = n! / (n-r)!</td>
+                  <td>C(n,r) = n! / [r!(n-r)!]</td>
+                </tr>
+                <tr>
+                  <td>Contoh</td>
+                  <td>Urutan pemenang lomba</td>
+                  <td>Pemilihan tim dari grup</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          
+          <div class="formula-section">
+            <p>Adapun rumus kombinasi sebagai berikut:</p>
+            <div class="formula-container">
+              <div class="formula">
+                <span class="combination-symbol">C</span>(<span class="variable">n</span>,<span class="variable">r</span>) = 
+                <div class="fraction">
+                  <span class="numerator"><span class="variable">n</span>!</span>
+                  <span class="denominator"><span class="variable">r</span>!(<span class="variable">n</span>-<span class="variable">r</span>)!</span>
+                </div>
+                &nbsp;atau&nbsp;
+                <span class="combination-symbol"><sub class="variable">n</sub>C<sub class="variable">r</sub></span> = 
+                <div class="fraction">
+                  <span class="numerator"><span class="variable">n</span>!</span>
+                  <span class="denominator"><span class="variable">r</span>!(<span class="variable">n</span>-<span class="variable">r</span>)!</span>
+                </div>
+              </div>
+            </div>
+            
+            <div class="formula-explanation">
+              <h4>Keterangan:</h4>
+              <ul>
+                <li><span class="variable">n</span> = banyak unsur yang tersedia dalam kumpulan</li>
+                <li><span class="variable">r</span> = banyak unsur yang dipilih dari kumpulan</li>
+              </ul>
+            </div>
+          </div>
+          
+          <div class="example-section">
+            <h3>Contoh Soal 1:</h3>
+            <div class="example-problem">
+              <p>Pada suatu jenis seleksi masuk Perguruan Tinggi, hanya ada 12 kampus yang diizinkan mengadakan seleksi bersamaan. Setiap pendaftar pun hanya diizinkan mendaftar 3 kampus dari 12 kampus yang ditawarkan.</p>
+              <p>Ada berapa cara pemilihan kampus yang bisa dilakukan oleh mahasiswa agar sesuai syarat?</p>
+            </div>
+            
+            <div class="example-solution">
+              <h4>Pembahasan:</h4>
+              <div class="solution-steps">
+                <p>Diketahui = n = 12<br>r = 3</p>
+                <p>Ditanya = <span class="combination-symbol">C</span> = ?</p>
+                <div class="step">
+                  <p><span class="combination-symbol"><sub>12</sub>C<sub>3</sub></span> = 12! / [3!(12-3)!]</p>
+                </div>
+                <div class="step">
+                  <p><span class="combination-symbol"><sub>12</sub>C<sub>3</sub></span> = 12! / [3!×9!]</p>
+                </div>
+                <div class="step">
+                  <p><span class="combination-symbol"><sub>12</sub>C<sub>3</sub></span> = (12×11×10×9!) / (3×2×1×9!)</p>
+                </div>
+                <div class="step">
+                  <p><span class="combination-symbol"><sub>12</sub>C<sub>3</sub></span> = (12×11×10) / (3×2×1)</p>
+                </div>
+                <div class="step">
+                  <p><span class="combination-symbol"><sub>12</sub>C<sub>3</sub></span> = 1320 / 6</p>
+                </div>
+                <div class="step result">
+                  <p><span class="combination-symbol"><sub>12</sub>C<sub>3</sub></span> = 220</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <div class="example-section">
+            <h3>Contoh Soal 2:</h3>
+            <div class="example-problem">
+              <p>Sebuah perusahaan memiliki 7 laki-laki dan 5 perempuan.<br>
+              Berapa banyak cara memilih 2 laki-laki dan 3 perempuan untuk membentuk sebuah tim?</p>
+              <div class="multiple-choice">
+                <p>A. 400</p>
+                <p>B. 270</p>
+                <p>C. 355</p>
+                <p>D. 210</p>
+                <p>E. 250</p>
+              </div>
+            </div>
+            
+            <div class="example-solution">
+              <h4>Pembahasan:</h4>
+              <div class="solution-steps">
+                <p>Kombinasi 2 laki-laki dari 7 laki-laki adalah:</p>
+                <div class="step">
+                  <p><span class="combination-symbol"><sub>7</sub>C<sub>2</sub></span> = 7! / [2!(7-2)!]</p>
+                </div>
+                <div class="step">
+                  <p><span class="combination-symbol"><sub>7</sub>C<sub>2</sub></span> = 7! / (2!×5!)</p>
+                </div>
+                <div class="step">
+                  <p><span class="combination-symbol"><sub>7</sub>C<sub>2</sub></span> = (7×6×5!) / (2×1×5!)</p>
+                </div>
+                <div class="step">
+                  <p><span class="combination-symbol"><sub>7</sub>C<sub>2</sub></span> = (7×6) / 2</p>
+                </div>
+                <div class="step">
+                  <p><span class="combination-symbol"><sub>7</sub>C<sub>2</sub></span> = 42 / 2</p>
+                </div>
+                <div class="step result">
+                  <p><span class="combination-symbol"><sub>7</sub>C<sub>2</sub></span> = 21</p>
+                </div>
+                
+                <p>Kombinasi 3 perempuan dari 5 perempuan adalah:</p>
+                <div class="step">
+                  <p><span class="combination-symbol"><sub>5</sub>C<sub>3</sub></span> = 5! / [3!(5-3)!]</p>
+                </div>
+                <div class="step">
+                  <p><span class="combination-symbol"><sub>5</sub>C<sub>3</sub></span> = 5! / (3!×2!)</p>
+                </div>
+                <div class="step">
+                  <p><span class="combination-symbol"><sub>5</sub>C<sub>3</sub></span> = (5×4×3!) / (3!×2×1)</p>
+                </div>
+                <div class="step">
+                  <p><span class="combination-symbol"><sub>5</sub>C<sub>3</sub></span> = (5×4) / 2</p>
+                </div>
+                <div class="step">
+                  <p><span class="combination-symbol"><sub>5</sub>C<sub>3</sub></span> = 20 / 2</p>
+                </div>
+                <div class="step result">
+                  <p><span class="combination-symbol"><sub>5</sub>C<sub>3</sub></span> = 10</p>
+                </div>
+
+                <div class="final-result">
+                  <p>Jumlah total cara memilih 2 laki-laki dan 3 perempuan adalah 21 × 10 = 210 cara.</p>
+                  <p class="answer">Jawaban: <span>D</span></p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <div class="navigation-buttons">
+          <button onclick="showKasus()" class="navigate-button">Kasus <i class="fas fa-arrow-right"></i></button>
+        </div>
+      </div>
+    </div>
+  
+    <div id="kasus-content" class="content">
+      <div class="content-card">
+        <h1 class="main-title">KASUS KOMBINASI</h1>
+        <div class="case-section">
+          <div class="case-visualization">
+            <div class="ball-container">
+              <div class="ball red"></div>
+              <div class="ball blue"></div>
+              <div class="ball yellow"></div>
+            </div>
+          </div>
+
+          <div class="case-problem">
+            <p>Dalam sebuah kotak yang ada diatas meja, terdapat 21 bola diantaranya berisi 9 bola merah, 7 bola biru, dan 5 bola kuning.</p>
+            <p>Kemudian seorang anak bernama Manda ingin mengambil bola dalam kotak tersebut.</p>
+            <p>Berapa cara untuk mengambil 6 bola merah, 4 bola biru, dan 3 bola kuning?</p>
+            
+            <div class="multiple-choice">
+              <p>A. 20000</p>
+              <p>B. 13500</p>
+              <p>C. 19400</p>
+              <p>D. 21000</p>
+              <p>E. 29400</p>
+            </div>
+          </div>
+        </div>
+        
+        <div class="navigation-buttons">
+          <button onclick="showMain()" class="navigate-button"><i class="fas fa-arrow-left"></i> Teori</button>
+          <button onclick="showKasusPembahasan()" class="navigate-button">Pembahasan <i class="fas fa-arrow-right"></i></button>
+        </div>
+      </div>
+    </div>
+  
+    <div id="kasus-pembahasan-content" class="content">
+      <div class="content-card">
+        <h1 class="main-title">PEMBAHASAN</h1>
+        <div class="solution-section">
+          <p>Diketahui: n = 21<br>
+          m (bola merah) = 6<br>
+          b (bola biru) = 4<br>
+          k (bola kuning) = 3</p>
+                  
+          <div class="solution-steps-container">
+            <div class="solution-step">
+              <h3>Bola merah:</h3>
+              <div class="step">
+                <p><span class="combination-symbol"><sub>9</sub>C<sub>6</sub></span> = 9! / [(9-6)!×6!]</p>
+              </div>
+              <div class="step">
+                <p><span class="combination-symbol"><sub>9</sub>C<sub>6</sub></span> = 9! / (3!×6!)</p>
+              </div>
+              <div class="step">
+                <p><span class="combination-symbol"><sub>9</sub>C<sub>6</sub></span> = (9×8×7×6!) / (3×2×1×6!)</p>
+              </div>
+              <div class="step">
+                <p><span class="combination-symbol"><sub>9</sub>C<sub>6</sub></span> = (9×8×7) / (3×2×1)</p>
+              </div>
+              <div class="step">
+                <p><span class="combination-symbol"><sub>9</sub>C<sub>6</sub></span> = 504 / 6</p>
+              </div>
+              <div class="step result">
+                <p><span class="combination-symbol"><sub>9</sub>C<sub>6</sub></span> = 84</p>
+              </div>
+            </div>
+          
+            <div class="solution-step">
+              <h3>Bola biru:</h3>
+              <div class="step">
+                <p><span class="combination-symbol"><sub>7</sub>C<sub>4</sub></span> = 7! / [(7-4)!×4!]</p>
+              </div>
+              <div class="step">
+                <p><span class="combination-symbol"><sub>7</sub>C<sub>4</sub></span> = 7! / (3!×4!)</p>
+              </div>
+              <div class="step">
+                <p><span class="combination-symbol"><sub>7</sub>C<sub>4</sub></span> = (7×6×5×4!) / (3×2×1×4!)</p>
+              </div>
+              <div class="step">
+                <p><span class="combination-symbol"><sub>7</sub>C<sub>4</sub></span> = (7×6×5) / (3×2×1)</p>
+              </div>
+              <div class="step">
+                <p><span class="combination-symbol"><sub>7</sub>C<sub>4</sub></span> = 210 / 6</p>
+              </div>
+              <div class="step result">
+                <p><span class="combination-symbol"><sub>7</sub>C<sub>4</sub></span> = 35</p>
+              </div>
+            </div>
+          
+            <div class="solution-step">
+              <h3>Bola kuning:</h3>
+              <div class="step">
+                <p><span class="combination-symbol"><sub>5</sub>C<sub>3</sub></span> = 5! / [(5-3)!×3!]</p>
+              </div>
+              <div class="step">
+                <p><span class="combination-symbol"><sub>5</sub>C<sub>3</sub></span> = 5! / (2!×3!)</p>
+              </div>
+              <div class="step">
+                <p><span class="combination-symbol"><sub>5</sub>C<sub>3</sub></span> = (5×4×3!) / (2×1×3!)</p>
+              </div>
+              <div class="step">
+                <p><span class="combination-symbol"><sub>5</sub>C<sub>3</sub></span> = (5×4) / (2×1)</p>
+              </div>
+              <div class="step">
+                <p><span class="combination-symbol"><sub>5</sub>C<sub>3</sub></span> = 20 / 2</p>
+              </div>
+              <div class="step result">
+                <p><span class="combination-symbol"><sub>5</sub>C<sub>3</sub></span> = 10</p>
+              </div>
+            </div>
+          </div>
+          
+          <div class="final-result">
+            <p>Total cara pengambilan adalah 84 × 35 × 10 = 29.400 cara.</p>
+            <p class="answer">Jawaban: <span>E</span></p>
+          </div>
+        </div>
+        
+        <div class="navigation-buttons">
+          <button onclick="showKasus()" class="navigate-button"><i class="fas fa-arrow-left"></i> Kasus</button>
+          <button onclick="showCalculator()" class="navigate-button">Kalkulator <i class="fas fa-arrow-right"></i></button>
+        </div>
+      </div>
+    </div>
+  
+    <div id="calculator-content" class="content">
+      <div class="content-card">
+        <h1 class="main-title">KALKULATOR KOMBINASI</h1>
+        
+        <div class="calculator-container">
+          <div class="calculator-form">
+            <div class="input-group">
+              <label for="merah">Jumlah bola merah:</label>
+              <input type="number" id="merah" min="0" placeholder="Jumlah bola merah" />
+            </div>
+            
+            <div class="input-group">
+              <label for="pilihMerah">Jumlah bola merah yang dipilih:</label>
+              <input type="number" id="pilihMerah" min="0" placeholder="Bola merah yang dipilih" />
+            </div>
+            
+            <div class="input-group">
+              <label for="biru">Jumlah bola biru:</label>
+              <input type="number" id="biru" min="0" placeholder="Jumlah bola biru" />
+            </div>
+            
+            <div class="input-group">
+              <label for="pilihBiru">Jumlah bola biru yang dipilih:</label>
+              <input type="number" id="pilihBiru" min="0" placeholder="Bola biru yang dipilih" />
+            </div>
+            
+            <div class="input-group">
+              <label for="kuning">Jumlah bola kuning:</label>
+              <input type="number" id="kuning" min="0" placeholder="Jumlah bola kuning" />
+            </div>
+            
+            <div class="input-group">
+              <label for="pilihKuning">Jumlah bola kuning yang dipilih:</label>
+              <input type="number" id="pilihKuning" min="0" placeholder="Bola kuning yang dipilih" />
+            </div>
+            
+            <button id="calculate" class="calculate-button" onclick="calculateCombinations()">
+              <i class="fas fa-calculator"></i> Hitung
+            </button>
+          </div>
+          
+          <div class="calculator-result">
+            <div class="result-container">
+              <h3>Hasil Perhitungan</h3>
+              <div id="result" class="result-display">
+                <p>Hasil akan ditampilkan di sini</p>
+              </div>
+            </div>
+            
+            <div class="visualization">
+              <div id="ball-visualization" class="ball-visualization">
+                <!-- Balls will be dynamically added here -->
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <div class="navigation-buttons">
+          <button onclick="showKasusPembahasan()" class="navigate-button"><i class="fas fa-arrow-left"></i> Pembahasan</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="kombinasi.js"></script>
+</body>
+</html>
